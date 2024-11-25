@@ -40,3 +40,4 @@ Notas
 
     docker pull ubriquejazz/wordpress-apache:latest
     docker run -d --name wp -p 8787:80 ubriquejazz/wordpress-apache:latest  
+

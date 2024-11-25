@@ -49,3 +49,8 @@ Creamos una imagen
     docker pull ubriquejazz/ubu20mejorado
 
 More info [aqui](https://www.youtube.com/watch?v=eWkqN9U5yJU&list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl&index=14)
+
+**Importante**: Para que la imagen se pueda subir hay que activar el grupo docker 
+
+    sudo usermod -aG docker $USER
+    newgrp docker
