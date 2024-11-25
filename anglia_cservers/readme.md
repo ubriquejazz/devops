@@ -1,10 +1,10 @@
 # Computer systems and servers
 
-- Lab 3 : Linux systems and shell scripting
-- Lab 4 :deamons and processes
-- Lab 5 :samba
-- Lab 6 :email
-- Lab 7: apache and php
-- Lab 8 : mysql
-- Lab 9: network traffic
-- other tools
+- Lab 03 : Linux systems and shell scripting
+- Lab 04 : deamons and processes
+- Lab 05 : samba
+- Lab 06 : email
+- Lab 07 : apache and php
+- Lab 08 : mysql
+- Lab 09 : network traffic (iptables)
+- Lab 10 : Links, file compression and other tools

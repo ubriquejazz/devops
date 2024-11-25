@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  # servicio django (desde dockerhub)
+  app:
+    image: python.3.8.7
+    container_name: django
+    ports:
+      - 3000:3000
+    command: 
+      - "sh -c 'cd /app && pip install -r requirements.txt'"
+      - "sh -c 'python3 -m debugpy --listen 0.0.0.0:5678 && python3 manage runserver 0.0.0.0:3000 && python3 manage migrate'"
+    volumes: "./django_project:app"
+    depends_on:
+      - bd 
+
+  # servicio mariadb (desde dockerhub)
+  datos:
+    image: mariadb:latest
+    container_name: bd
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=projectdjango
+      - MYSQL_USER=pepe
+      - MYSQL_PASSWORD=pepe
+    ports:
+      - 3336:3306
+    volumes:
+      - data:/var/lib/mysql
+      - ./mysqlsampledatabase.sql:/docker-entrypoint-initdb.d/mysqlsampledatabase.sql
+
+volumes:
+  data:
+    driver: local
