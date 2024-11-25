@@ -1,15 +1,12 @@
 # Docker
 
-Ver [playlist](https://www.youtube.com/playlist?list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl). CEP de Castillaja de la Cuesta
+Durante el 2021 he tenido la suerte de poder realizar y tutorizar el curso de “Introducción de Docker para desarrolladores” para el CEP (Centro de Estudios del Profesorado) de Castilleja de la Cuesta (Sevilla).
 
-### Modulo 6
-Objetivos: poder distribuir nuestras imágenes para que puedan ser usadas en cualquier sistema en el que docker esté instalado. 
-- Nuevas Imágenes a partir de contenedores
-- Ejemplos Dockerfiles
-- Conexion GitHub DockerHub
+- Curso en [HTML](https://pekechis.github.io/docker/cursos/jenkins/cep/ci/desarrolladores/materiales/2021/12/26/curso-docker-para-profesores.html)
 
-Tarea 10: <br>
-Tarea 11: <br>
+- Ver [playlist](https://www.youtube.com/playlist?list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl) de YouTube
+
+
 
 ### Modulo 7: Docker Compose
 
@@ -23,7 +20,7 @@ Tarea 13: <br>
 
 ---
 
-### Modulo 1 y 2
+### Modulo 1 y 2: Ejecuntando contenedores
 - Cuenta Docker Hub
 - Instalacion Ubuntu20 04
 
@@ -35,7 +32,7 @@ Tarea 3: <br>
 Tarea 5: <br>
 Tarea 6: <br>
 
-### Modulo 4 y 5: Volumenes
+### Modulo 4 y 5: Volumenes en Docker
 Hasta ahora hemos visto imagenes y contenedores pero existen otros objetos adicionales, como son los volumenes y las redes:
 
 - Codigo en distintas versiones de PHP
@@ -48,3 +45,12 @@ Hasta ahora hemos visto imagenes y contenedores pero existen otros objetos adici
 Tarea 07: Persistencia de datos con volúmenes <br>
 Tarea 08: Persistencia de datos con bind mounts <br>
 Tarea 09: Redes
+
+### Modulo 6: Mis propios contenedores
+Objetivos: poder distribuir nuestras imágenes para que puedan ser usadas en cualquier sistema en el que docker esté instalado. 
+- Nuevas Imágenes a partir de contenedores
+- Ejemplos Dockerfiles
+- Conexion GitHub DockerHub
+
+Tarea 10: <br>
+Tarea 11: <br>
