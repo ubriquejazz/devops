@@ -16,9 +16,9 @@ fi
 
 teclaIP=$1	# Capturamos en la variable teclaIP el argumento recibido
 prefijoIP=${teclaIP%.*}.		# eliminamos desde el último punto en adelante
-fichero="Red-${prefijoIP}0.txt"
-
-for ((i=1;i<10;i++))
+fichero="log/network_${prefijoIP}0.txt"
+offset=110
+for ((i=offset+1;i<offset+10;i++))
 do
 	ping  -c 1 -W 1  ${prefijoIP}${i} >/dev/null && echo "IP ${prefijoIP}${i} está activa" | tee -a ${fichero} || echo "IP ${prefijoIP}${i} NO está activa" 
 done
