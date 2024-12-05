@@ -402,3 +402,4 @@ If you become stuck, compare your code against the official repo in GitHub.
 
 - [learndjango](https://learndjango.com/courses/django-for-beginners/chapter-2-hello-world-website/)
 - [official repo](https://github.com/wsvincent/djangoforbeginners)
+- [Compose para desarrollo](https://www.youtube.com/watch?v=h8GKcuYOLDY&list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl&index=18)

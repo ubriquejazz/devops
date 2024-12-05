@@ -6,5 +6,6 @@ Aplicacion de dos capas o servicios: web y datos
 - Usamos la red por defecto de docker
 
 ## References
-- [D. Compose Completo](https://www.youtube.com/watch?v=4Dc--OiiNh0&list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl&index=17)
-- [Raul Profersor]
+- [Dockerfiles](https://www.youtube.com/watch?v=oiZORiVh3Gs&list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl&index=15) Minuto 7:20
+- [Compose completo](https://www.youtube.com/watch?v=4Dc--OiiNh0&list=PL-8CyWabyNa85xowmOeBMCspbrn6qNWgl&index=17) 
+- [Raul Profersor](https://raul-profesor.github.io/DEAW/docker-compose)
