@@ -4,7 +4,7 @@ services:
 
   # servicio php + apache (desde mi dockerfile)
   web:
-    image: jperjim398/miwp
+    build: .
     container_name: web
     ports:
       - 8181:80
