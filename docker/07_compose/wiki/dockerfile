@@ -1,0 +1,28 @@
+services:
+    mediawiki:
+      image: mediawiki:latest
+      ports:
+        - "8080:80"
+      environment:
+        - MEDIAWIKI_DB_HOST=db
+        - MEDIAWIKI_DB_USER=wiki_user
+        - MEDIAWIKI_DB_PASSWORD=wiki_password
+        - MEDIAWIKI_DB_NAME=wiki_database
+      volumes:
+        - ./mediawiki:/var/www/html
+      depends_on:
+        - db
+
+    db:
+        image: mariadb:10.5
+        environment:
+            - MYSQL_ROOT_PASSWORD=root_password
+            - MYSQL_DATABASE=wiki_database
+            - MYSQL_USER=wiki_user
+            - MYSQL_PASSWORD=wiki_password
+        volumes:
+            - ./db_data:/var/lib/mysql
+    
+    volumes:
+        db_data:
+        
