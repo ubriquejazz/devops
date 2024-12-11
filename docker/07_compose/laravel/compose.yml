@@ -25,5 +25,7 @@ services:
       - mariadb_data:/var/lib/mysql
 
 volumes:
+  php_data:
+    driver: local
   mariadb_data:
     driver: local
