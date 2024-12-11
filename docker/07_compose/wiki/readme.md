@@ -13,8 +13,6 @@ Crea una carpeta de trabajo llamada mediawiki-docker:
 
 Abre el archivo con tu editor de texto favorito y añade el siguiente contenido:
 
-    version: '3.8'
-
     services:
       mediawiki:
         image: mediawiki:latest
@@ -47,14 +45,14 @@ Abre el archivo con tu editor de texto favorito y añade el siguiente contenido:
 
 Crea las carpetas para almacenar los datos persistentes:
 
-    mkdir mediawiki
-    mkdir db_data
+    mkdir media_app
+    mkdir media_db
 
 ## Configurar permisos (si es necesario):
 
 Ajusta los permisos para que Docker pueda escribir en las carpetas:
 
-    sudo chmod -R 777 mediawiki db_data
+    sudo chmod -R 777 media_app media_db
 
 ## Iniciar los servicios:
 
@@ -77,7 +75,7 @@ Docker descargará las imágenes necesarias y levantará los contenedores de Med
 
 ## Finalizar la configuración:
 
-- Descarga el archivo LocalSettings.php generado al final de la instalación.
+- Descarga el archivo **LocalSettings.php** generado al final de la instalación.
 - Colócalo en la carpeta mediawiki:
 
         mv /ruta/del/archivo/LocalSettings.php ./mediawiki/
@@ -87,12 +85,6 @@ Docker descargará las imágenes necesarias y levantará los contenedores de Med
 Comprueba que los contenedores están corriendo:
 
     docker-compose ps
-
-## Tareas de evaluación:
-
-- Crea una página de prueba en tu MediaWiki.
-- Reinicia los contenedores y verifica que los datos persisten.
-- Puedes personalizar el puerto 8080 si está en uso por otro servicio en tu máquina.
 
 ## References
 

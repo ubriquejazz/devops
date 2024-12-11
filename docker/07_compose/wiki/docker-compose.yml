@@ -1,7 +1,7 @@
 
 services:
 
-  mediawiki:
+  wiki:
     image: mediawiki:latest
     container_name: media
     restart: unless-stopped
@@ -10,27 +10,15 @@ services:
     depends_on:
       - database
     volumes:
-      - mediawiki:/var/www/html
+      - media_app:/var/www/html
+      - media_data:/var/www/data
     #After initial setup, download LocalSettings.php to the same directory as
     #this yaml and uncomment the following line and use compose to restart the service
-    # - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
 
-  database:
-    #build: .
-    image: mariadb:latest
-    container_name: bd
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=pepe
-      - MYSQL_PASSWORD=pepe
-    ports:
-      - 3336:3306
-    volumes:
-      - db_data:/var/lib/mysql
 
 volumes:
-  mediawiki:
+  media_app:
     driver: local
-  db_data:
+  media_db:
     driver: local
