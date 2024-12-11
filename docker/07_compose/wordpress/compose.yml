@@ -13,7 +13,7 @@ services:
   # servicio mariadb (desde dockerhub)
   datos:
     image: mariadb:latest
-    container_name: bd
+    container_name: datos
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=wordpress
