@@ -1,23 +1,36 @@
-version: '3'
+
 services:
-  image: mediawiki
-  restart: unless-stopped
-  ports:
-    - 8080:80
-  links:
-    - database
-  volumes:
-    - mediawiki-www:/var/www/html
-  #After initial setup, download LocalSettings.php to the same directory as
-  #this yaml and uncomment the following line and use compose to restart the service
-  # - ./LocalSettings.php:/var/www/html/LocalSettings.php
+
+  mediawiki:
+    image: mediawiki:latest
+    container_name: media
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+    volumes:
+      - mediawiki:/var/www/html
+    #After initial setup, download LocalSettings.php to the same directory as
+    #this yaml and uncomment the following line and use compose to restart the service
+    # - ./LocalSettings.php:/var/www/html/LocalSettings.php
 
   database:
-  build: .
-  restart: unless-stopped
-  volumes:
-    - mediawiki-db:/var/lib/mysql
+    #build: .
+    image: mariadb:latest
+    container_name: bd
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=pepe
+      - MYSQL_PASSWORD=pepe
+    ports:
+      - 3336:3306
+    volumes:
+      - db_data:/var/lib/mysql
 
 volumes:
-  mediawiki-www:
-  mediawiki-db:
+  mediawiki:
+    driver: local
+  db_data:
+    driver: local
