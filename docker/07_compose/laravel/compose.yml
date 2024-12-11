@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  php:
+    image: php:7.4-apache
+    ports:
+      - 9000:80
+    volumes:
+      - .:/var/www/html
+    depends_on:
+    - datos
+
+  datos:
+    image: mariadb:latest
+    container_name: datos
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=ejercicios
+      - MYSQL_USER=pepe
+      - MYSQL_PASSWORD=pepe
+    ports:
+      - 3336:3306
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:
+    driver: local
