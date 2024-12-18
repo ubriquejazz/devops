@@ -1,16 +1,15 @@
-# How to Install Home Assistant using Docker Compose
+# How to Install Home Assistant
 
-Now that we have gone over the differences between the variants of Home  Assistant let us move on to how to use Docker Compose to install this  smart home software.
+During these installation steps, we will add a couple of other crucial pieces of software you will likely want to use. Thanks to **docker compose**, installing additional software is super simple and we can keep it all within the same file.
 
-During these installation steps, we will add a couple of other crucial pieces of software you will likely want to use.
-
-Thanks to Docker compose, installing additional software is super simple and we can keep it all within the same file.
+References:
+- [HA como un pro, Youtuber ZonaGadget](https://www.youtube.com/playlist?list=PLAqZh4-bL5qBr3fg_oaO877ZVJGiceoV4)
+- [HA using Docker Compose, PiMyLifeUp](https://pimylifeup.com/home-assistant-docker-compose/)
 
 ## Preparing for Home Assistant
 
-Thanks to the Docker container for Home Assistant, there isn’t much we must do to set it up.
 
-**1.** Before proceeding, you must install Docker on your operating system. We have guides that cover this for the [Raspberry Pi](https://pimylifeup.com/raspberry-pi-docker/) and [Ubuntu](https://pimylifeup.com/ubuntu-install-docker/).
+**1.** Before proceeding, you must install Docker on your operating system. We have guides that cover this for the [Raspberry Pi](https://pimylifeup.com/raspberry-pi-docker/) and [Ubuntu](https://pimylifeup.com/ubuntu-install-docker/). 
 
 Once you have installed Docker and ensured it works, you can start this guide.
 
