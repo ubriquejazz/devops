@@ -11,7 +11,7 @@ Some scripts used when I was sys-admin
 
 ## Designed web interfaces for IoT devices to monitor and control hardware
 
-- Developed user-friendly dashboards with real-time data visualization using React.js and integrated them with RESTful APIs built on Django.
+- Developed user-friendly dashboards with real-time data visualization using Flask
 - Enabled secure control mechanisms over MQTT and WebSocket protocols to interact with hardware.
 - Integrated Grafana to provide advanced monitoring and analytical insights for hardware performance metrics.
 
