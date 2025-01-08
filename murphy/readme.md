@@ -1,5 +1,14 @@
 # Murphyadmin
 
+## Repertorio
+
+| Command | Topic |
+| ------- | ----- |
+| LEDON | Enciende el LED interno| 
+| LEDOFF | Apaga el LED interno| 
+| STATUS | Muestra el estado del LED| 
+| GET_TEMP | Obtiene la temperatura actual| 
+
 ## Web Interface Design
 
 1. LED Status Indicator:
