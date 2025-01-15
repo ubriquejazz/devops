@@ -15,11 +15,13 @@ then
 fi
 
 teclaIP=$1	# Capturamos en la variable teclaIP el argumento recibido
-prefijoIP=${teclaIP%.*}.		# eliminamos desde el último punto en adelante
+prefijoIP=${teclaIP%.*}. # eliminamos desde el último punto en adelante
 fichero="log/network_${prefijoIP}0.txt"
-offset=110
-for ((i=offset+1;i<offset+10;i++))
+for ((offset=100;offset<200;offset+=10))
 do
-	ping  -c 1 -W 1  ${prefijoIP}${i} >/dev/null && echo "IP ${prefijoIP}${i} está activa" | tee -a ${fichero} || echo "IP ${prefijoIP}${i} NO está activa" 
+	for ((i=offset;i<offset+10;i++))
+	do
+		ping  -c 1 -W 1  ${prefijoIP}${i} >/dev/null && echo "${prefijoIP}${i}" | tee -a ${fichero} || echo "IP ${prefijoIP}${i} NO está activa" 
+	done
 done
 exit 0
