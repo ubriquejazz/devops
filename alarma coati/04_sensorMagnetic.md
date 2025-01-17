@@ -1,9 +1,8 @@
-
-SENSOR DE VENTANA/PUERTAS
+# SENSOR DE VENTANA/PUERTAS
 
 Magnetic contact detectors can be fitted to protect doors and windows. If they are opened a radio signal is transmitted to the Coati alarm. Before fixing the detector check the radio range. 
 
-2. Setting
+## Settings
 
 - Fit the battery. Wait for 10 seconds to the detector become stable.
 - Set the Coati alarm to the "code learning" code
@@ -11,16 +10,14 @@ Magnetic contact detectors can be fitted to protect doors and windows. If they a
 - If the Coati alarm responds with a long beep, the "code learning" process has finished sucessfully.
 - If consecutive short beeps ocurrs, the "code learning" process has failed.
 
-3. Operation
+## Operation
 
 - When opening the battery cover, the Sabotage SW will be triggered and a radio signal will be emitted to the Coati alarm.
 - The Coati alarm will sound 30s and be silent for 10s. Such a cycle will be repeated for 10 times.
 - Separating the magnet from the detector a radio signal will be emitted to the Coati alarm to activate the chimie or alarm.
 - The indication of LED represents the following status:
 
-	LED indication					Status
-	--------------					------
-	illuminating steadily				Magnetic contact detector is emitting radio singal
-	Flashing every 30 seconds			Low battery
-
-
+| LED indication | Status |
+| -------------- | ------ |
+| illuminating steadily | Magnetic contact detector is emitting radio singal |
+| Flashing every 30 seconds| Low battery |

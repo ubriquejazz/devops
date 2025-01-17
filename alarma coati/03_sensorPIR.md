@@ -1,9 +1,8 @@
-
-SENSOR DE MOVIMIENTO
+# SENSOR DE MOVIMIENTO (PIR)
 
 The PIR detector is designed to detect movement in an area by changes of infrared radiation levels caused for example when a person moves within the field of vision (FoV). If movement is detected a radio signal is emitted to the Coati alarm.
 
-2. Setting
+## Setting
 
 - After inserting the batteries, the PIR detector needs a 60 seconds warm-up period before emitting the ID code.
 - Set the Coati alarm to the "code learning" mode.
@@ -11,15 +10,14 @@ The PIR detector is designed to detect movement in an area by changes of infrare
 - If the Coati alarm responds with a long beep, the "code learning" process has finished sucessfully.
 - If consecutive short beeps ocurrs, the "code learning" process has failed.
 
-3. Operation
+## Operation
 
 - When removing the rear cover the Sabotage SW will be triggered and a radio signal will be emitted to the Coati alarm.
 - The Coati alarm will sound 30s and be silent for 10s. Such a cycle will be repeated for 10 times.
 - The PIR detector is designed to detect movement within the FoV. If movement is detected a radio signal is emitted to the Coati alarm to activate the chimie or alarm.
 - The indication of LED represents the following status:
 
-	LED indication					Status
-	--------------					------
-	illuminating steadily				PIR detector is emitting radio singal
-	Flashing every 30 seconds			Low battery
-
+| LED indication | Status |
+| -------------- | ------ |
+| illuminating steadily | PIR detector is emitting radio singal
+| Flashing every 30 seconds | Low battery
