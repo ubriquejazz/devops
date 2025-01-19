@@ -1,5 +1,18 @@
 #include <DHT.h>
 
+#define BTTN01   6
+#define BTTN02   7
+#define BTTN03   8
+#define BTTN04   9
+#define DELAY    5000
+
+#define RLAY01   12
+#define RLAY02   11
+#define RLAY03   10
+#define RLAY04    9
+
+#define LED_PIN  LED_BUILTIN
+
 // Configuración del sensor de temperatura
 #define DHTPIN 2     // Pin digital al que está conectado el sensor DHT
 #define DHTTYPE DHT11 // Cambia a DHT22 si usas ese modelo
@@ -7,6 +20,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 // Variables globales
 String command = "";
+int ledState = HIGH;
 
 void setup() {
   Serial.begin(9600); // Comunicación serial
@@ -55,4 +69,86 @@ void handleCommand(String command) {
   } else {
     Serial.println("Comando no reconocido. Escribe 'HELP' para ver los comandos disponibles.");
   }
+}
+
+/*******************/
+
+
+void releOFF(int id) {
+  if (id == 1) 
+    digitalWrite(RLAY01, HIGH);
+  else if (id == 2)
+    digitalWrite(RLAY02, HIGH);
+  else {
+    digitalWrite(RLAY01, HIGH);
+    digitalWrite(RLAY02, HIGH);  
+  }
+}
+
+void releON(int id) {
+  if (id == 1) 
+    digitalWrite(RLAY01, LOW);
+  else if (id == 2)
+    digitalWrite(RLAY02, LOW);
+}
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(RLAY01, OUTPUT);
+  pinMode(RLAY02, OUTPUT);
+  pinMode(BTTN01, INPUT);
+  pinMode(BTTN02, INPUT);
+  releOFF(0);
+}
+
+void loopIzda() {
+
+  static bool upRunning = false;
+  static bool downRunning = false;
+
+  static unsigned long startTimeUp = 0;
+  static unsigned long elapsedTimeUp = 0;
+  static unsigned long startTimeDwn = 0;
+  static unsigned long elapsedTimeDwn = 0;
+
+  if (!upRunning && !downRunning) { // solo en reposo cambio
+    if (digitalRead(BTTN01) == LOW && digitalRead(BTTN02) == HIGH) {
+      upRunning = true;
+      startTimeUp = millis();
+      releON(2);
+    }
+    else if (digitalRead(BTTN02) == LOW && digitalRead(BTTN01) == HIGH) {
+      downRunning = true;
+      startTimeDwn = millis();
+      releON(1);
+    }
+  }
+  
+  if (upRunning && !downRunning) {
+    elapsedTimeUp = millis() - startTimeUp;
+    if (elapsedTimeUp > DELAY) {
+      upRunning = false;
+      releOFF(2);
+    }
+  }
+  
+ if (downRunning && !upRunning) {
+    elapsedTimeDwn = millis() - startTimeDwn;
+    if (elapsedTimeDwn > DELAY) {
+      downRunning = false;
+      releOFF(1);
+    }
+  }
+}
+
+
+void loopDcha() {
+    
+  static bool upRunning = false;
+  static bool downRunning = false;
+
+  static unsigned long startTimeUp = 0;
+  static unsigned long elapsedTimeUp = 0;
+  static unsigned long startTimeDwn = 0;
+  static unsigned long elapsedTimeDwn = 0;
 }
