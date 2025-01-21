@@ -11,30 +11,26 @@
 #define RLAY03   10
 #define RLAY04    9
 
-#define LED_PIN  LED_BUILTIN
-
-// Configuración del sensor de temperatura
-#define DHTPIN 2     // Pin digital al que está conectado el sensor DHT
-#define DHTTYPE DHT11 // Cambia a DHT22 si usas ese modelo
-DHT dht(DHTPIN, DHTTYPE);
+#define LED_PIN   LED_BUILTIN
+#define DHTPIN    2       // Pin digital al que está conectado el sensor DHT
+#define DHTTYPE   DHT11   // Cambia a DHT22 si usas ese modelo
 
 // Variables globales
+DHT dht(DHTPIN, DHTTYPE);
 String command = "";
 int ledState = HIGH;
 
 void setup() {
   Serial.begin(9600); // Comunicación serial
   dht.begin();        // Inicializa el sensor
-  Serial.println("Interprete de comandos listo. Escribe 'HELP' para ver los comandos disponibles.");
-}
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(RLAY01, OUTPUT);
+  pinMode(RLAY02, OUTPUT);
+  pinMode(BTTN01, INPUT);
+  pinMode(BTTN02, INPUT);
+  releOFF(0);
 
-void loop() {
-  // Verifica si hay datos disponibles en el puerto serie
-  if (Serial.available()) {
-    command = Serial.readStringUntil('\n'); // Lee el comando hasta un salto de línea
-    command.trim();                         // Elimina espacios y caracteres extra
-    handleCommand(command);                 // Procesa el comando
-  }
+  Serial.println("Interprete de comandos listo. Escribe 'HELP' para ver los comandos disponibles.");
 }
 
 // Función para manejar los comandos
@@ -71,9 +67,6 @@ void handleCommand(String command) {
   }
 }
 
-/*******************/
-
-
 void releOFF(int id) {
   if (id == 1) 
     digitalWrite(RLAY01, HIGH);
@@ -92,17 +85,7 @@ void releON(int id) {
     digitalWrite(RLAY02, LOW);
 }
 
-void setup() {
-  pinMode(LED_PIN, OUTPUT);
-  pinMode(RLAY01, OUTPUT);
-  pinMode(RLAY02, OUTPUT);
-  pinMode(BTTN01, INPUT);
-  pinMode(BTTN02, INPUT);
-  releOFF(0);
-}
-
 void loopIzda() {
-
   static bool upRunning = false;
   static bool downRunning = false;
 
@@ -141,9 +124,7 @@ void loopIzda() {
   }
 }
 
-
 void loopDcha() {
-    
   static bool upRunning = false;
   static bool downRunning = false;
 
@@ -151,4 +132,16 @@ void loopDcha() {
   static unsigned long elapsedTimeUp = 0;
   static unsigned long startTimeDwn = 0;
   static unsigned long elapsedTimeDwn = 0;
+}
+
+void loop() {
+  loopIzda();
+  //loopDcha();
+
+  // Verifica si hay datos disponibles en el puerto serie
+  if (Serial.available()) {
+    command = Serial.readStringUntil('\n'); // Lee el comando hasta un salto de línea
+    command.trim();                         // Elimina espacios y caracteres extra
+    handleCommand(command);                 // Procesa el comando
+  }
 }
