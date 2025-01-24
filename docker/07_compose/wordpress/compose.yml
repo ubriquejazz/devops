@@ -3,15 +3,15 @@ version: '3'
 services:
 
   # servicio php + apache (desde mi dockerfile)
-  web:
+  web81:
     build: .
-    container_name: web
+    container_name: web81
     ports:
       - 8181:80
     depends_on:
-      - datos
+      - datos81
   # servicio mariadb (desde dockerhub)
-  datos:
+  datos81:
     image: mariadb:latest
     container_name: datos
     environment:
