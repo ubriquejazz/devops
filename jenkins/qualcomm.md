@@ -1,0 +1,5 @@
+-  Qualcomm Group > Systems Test Engineering
+- Experience in System Software and/or low-level Firmware validation.
+- SW Quality, ARM architecture, Linux, RTOS programming (multi thread)
+- Test methodology, software development cycle life
+- Experience in test automation development, source code management, continuous integration, and test framework development
