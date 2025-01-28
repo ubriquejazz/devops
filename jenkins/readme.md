@@ -1,5 +1,4 @@
 # Jenkins
 
 - Qualcomm, Cork
-
-- dmed, Malaga
+- Malaga: Dmed, Airzone
