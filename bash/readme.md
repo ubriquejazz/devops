@@ -19,5 +19,3 @@
 - Comparacion valores numericos
 - Case, Foor Loop, Select
 - Separador (conjunto), Arrays
-
-## 
